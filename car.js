@@ -1,12 +1,12 @@
 class Car{
-    constructor(x,y,width,height,controlType,maxSpeed=3){
+    constructor(x,y,width,height,controlType,maxSpeed=10){
         this.x=x;
         this.y=y;
         this.width=width;
         this.height=height;
 
         this.speed=0; // tốc độ ban đầu
-        this.acceleration=0.2;  // hệ số gia tốc
+        this.acceleration=2;  // hệ số gia tốc
         this.maxSpeed=maxSpeed;  // tốc độ tối đa
         this.friction=0.05;  // hệ số ma sát
         this.angle=0; // vị trí ban đầu ( liên quan đến góc )

@@ -42,9 +42,9 @@ class Sensor{
             const poly=traffic[i].polygon;
             for(let j=0;j<poly.length;j++){
                 const value=getIntersection(  // kiểm tra xem cảm biến có va chạm tới bất kì xe nào hay kh
-                    ray[0],
-                    ray[1],
-                    poly[j],
+                    ray[0],    // start của ray
+                    ray[1],    // end của ray
+                    poly[j],   // polygon[j]
                     poly[(j+1)%poly.length]
                 );
                 if(value){
@@ -92,12 +92,12 @@ class Sensor{
             ctx.beginPath();
             ctx.lineWidth=2;
             ctx.strokeStyle="yellow";
-            ctx.moveTo(
+            ctx.moveTo(    // từ điểm xuất phát
                 this.rays[i][0].x,
                 this.rays[i][0].y
             );
             ctx.lineTo(
-                end.x,
+                end.x,   // đến điểm đánh dấu va chạm
                 end.y
             );
             ctx.stroke();
@@ -106,11 +106,11 @@ class Sensor{
             ctx.lineWidth=2;
             ctx.strokeStyle="black";
             ctx.moveTo(
-                this.rays[i][1].x,
+                this.rays[i][1].x,  // từ điểm kết thúc 
                 this.rays[i][1].y
             );
-            ctx.lineTo(
-                end.x,
+            ctx.lineTo( 
+                end.x,  // đến điểm đánh dấu va chạm
                 end.y
             );
             ctx.stroke();
